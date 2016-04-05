@@ -1,0 +1,13 @@
+.row
+  .small-12.medium-6.medium-centered.columns
+    center
+      .small-12
+        .search
+          = form_for search_path, method: :get do |f|
+            p
+              = text_field_tag :q, params[:q]
+              = submit_tag "Search", name: nil
+      - feed.news.desc_sort.each do |news|
+        .small-12
+          .part-news
+            = link_to news.title, news.url, class: 'news-button'

@@ -1,0 +1,11 @@
+.row
+  .small-12.medium-6.medium-centered.columns
+    center
+      .small-12
+        = link_to '+', new_feed_path, class: 'add-feed-button'
+        = link_to "O", refresh_path, class: 'refresh-button'
+      - feeds.each do |feed|
+        .small-12
+          .part
+            = link_to feed.name, feed_path(feed), class: 'feed-button'
+            = link_to 'x', feed_path(feed), method: :delete, class: 'delete-button'
