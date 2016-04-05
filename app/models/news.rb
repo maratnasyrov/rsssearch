@@ -8,3 +8,5 @@ class News < ActiveRecord::Base
 
   scope :desc_sort, -> { order('updated_at DESC') }
 end
+
+News.__elasticsearch__.create_index!
