@@ -1,11 +1,12 @@
 class NewsController < ApplicationController
-  # expose(:news) { feed.news }
+  expose(:feed)
+  expose(:news) { feed.news }
 
   def search
     if params[:q].nil?
       news = []
     else
-      news = Neews.search params[:q]
+      news = neews.search params[:q]
     end
   end
 end
